@@ -1,0 +1,50 @@
+score = int(input("Enter your score (0-100): "))
+
+
+if score < 0 or score > 100:
+    print("Invalid score! Please enter a value between 0 and 100.")
+
+else:
+    
+    if score >= 97:
+        grade = "A+"
+        message = "mahusay"
+    elif score >= 93:
+        grade = "A"
+        message = "magaling!"
+    elif score >= 90:
+        grade = "A-"
+        message = "kasama pa sa top!"
+    elif score >= 87:
+        grade = "B+"
+        message = "pwede na rin!"
+    elif score >= 83:
+        grade = "B"
+        message = "okey na to!"
+    elif score >= 80:
+        grade = "B-"
+        message = "oks na rin!"
+    elif score >= 77:
+        grade = "C+"
+        message = "pwede na!"
+    elif score >= 73:
+        grade = "C"
+        message = "bagsak, unti nalang."
+    elif score >= 70:
+        grade = "C-"
+        message = "bagsak, kaya yan."
+    elif score >= 67:
+        grade = "D+"
+        message = "bagsak, kaya pa."
+    elif score >= 63:
+        grade = "D"
+        message = "bagsak, effort pa."
+    elif score >= 60:
+        grade = "D-"
+        message = "bagsak, habol ka."
+    else:
+        grade = "F"
+        message = "bagsak."
+
+    print(f"Your grade is: {grade}")
+    print(message)
