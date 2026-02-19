@@ -1,0 +1,14 @@
+age = int(input("Enter your age: "))
+
+ID_input = input("Do you have a valid ID? (yes/no): ").strip().lower()
+
+
+has_valid_id = ID_input == "yes"
+
+if age >= 18 and has_valid_id:
+    print("Eligible!")
+    
+    if age >= 60:
+        print("May discount and senior citezen! ")
+else:
+    print("Not eligible")
