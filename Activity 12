@@ -1,0 +1,26 @@
+
+students = ["Ana", "John", "Maria", "Luis", "Peter"]
+
+print("Original list:", students)
+
+students.append("Grace")    
+students.insert(2, "Kevin")     
+
+print("After adding students:", students)
+
+
+students[2] = "Riygan"  
+
+print("After update:", students)
+
+
+students.remove("Maria")
+
+print("After removal:", students)
+
+removed_student = students.pop()
+
+print("Removed using pop():", removed_student)
+
+print("Final list:", students)
+print("Length of list:", len(students))
