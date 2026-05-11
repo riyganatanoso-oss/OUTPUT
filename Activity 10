@@ -1,0 +1,31 @@
+
+
+print("--- USERNAME GENERATOR ---")
+
+
+full_name = input("Enter your full name (first last): ").strip()
+birth_year = input("Enter your birth year (YYYY): ").strip()
+
+
+name_parts = full_name.split()
+
+if len(name_parts) < 2:
+    print("Invalid input! Please enter first and last name.")
+else:
+    first_name = name_parts[0]
+    last_name = name_parts[-1]
+
+    
+    if not birth_year.isdigit() or len(birth_year) != 4:
+        print("Invalid birth year!")
+    else:
+        
+        part1 = first_name[:3].lower()
+        part2 = last_name[:3].lower()
+        part3 = birth_year[-2:]
+
+        username = part1 + part2 + part3
+
+        
+        print("\n--- GENERATED USERNAME ---")
+        print("Username:", username)
