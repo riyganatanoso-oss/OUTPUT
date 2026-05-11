@@ -1,0 +1,83 @@
+print("--- MOVIE TICKET SYSTEM ---")
+
+
+day = input("Day (weekday/weekend): ").lower()
+customer_type = input("Customer type (regular/student/senior): ").lower()
+show_time = int(input("Show time (24-hour format): "))
+tickets = int(input("Number of tickets: "))
+
+
+if show_time < 9 or show_time > 22:
+    print("Invalid show time! Movie time must be between 9 and 22.")
+    
+elif tickets <= 0:
+    print("Invalid ticket count! Number of tickets must be positive.")
+
+else:
+    
+    if day == "weekday":
+        base_price = 200
+    elif day == "weekend":
+        base_price = 300
+    else:
+        print("Invalid day input!")
+        exit()
+
+    subtotal = base_price * tickets
+
+
+    student_discount = 0
+    senior_discount = 0
+    matinee_discount = 0
+    group_discount = 0
+
+    total = subtotal
+
+    
+
+    
+    if customer_type == "student":
+        student_discount = total * 0.20
+        total -= student_discount
+
+    
+    elif customer_type == "senior":
+        senior_discount = total * 0.30
+        total -= senior_discount
+
+    
+    elif customer_type == "regular":
+        pass
+
+    else:
+        print("Invalid customer type!")
+        exit()
+
+    
+    if show_time < 12:
+        matinee_discount = total * 0.10
+        total -= matinee_discount
+
+
+    if tickets >= 5:
+        group_discount = total * 0.05
+        total -= group_discount
+
+    
+    print("\n--- RECEIPT ---")
+    print(f"Base price: {base_price:.2f} x {tickets} = {subtotal:.2f}")
+
+    if student_discount > 0:
+        print(f"Student discount (20%): -{student_discount:.2f}")
+
+    if senior_discount > 0:
+        print(f"Senior discount (30%): -{senior_discount:.2f}")
+
+    if matinee_discount > 0:
+        print(f"Matinee discount (10%): -{matinee_discount:.2f}")
+
+    if group_discount > 0:
+        print(f"Group discount (5%): -{group_discount:.2f}")
+
+    print(f"\nTOTAL: {total:.2f}")
+    print("Thank you for your purchase!")
