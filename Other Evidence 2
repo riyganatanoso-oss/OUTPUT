@@ -1,0 +1,64 @@
+
+
+print("=== STUDENT ID CARD GENERATOR ===")
+
+
+full_name = input("Enter full name: ").strip()
+course_code = input("Enter course code: ").strip()
+year_level = input("Enter year level (1-4): ").strip()
+birth_date = input("Enter birth date (MM/DD/YYYY): ").strip()
+
+
+name_parts = full_name.split()
+
+if len(name_parts) < 2:
+    print("Invalid name! Please enter at least first and last name.")
+    exit()
+
+if not course_code.isalnum():
+    print("Invalid course code! Letters and numbers only.")
+    exit()
+
+if year_level not in ["1", "2", "3", "4"]:
+    print("Invalid year level!")
+    exit()
+
+if len(birth_date) != 10 or birth_date[2] != "/" or birth_date[5] != "/":
+    print("Invalid birth date format! Use MM/DD/YYYY")
+    exit()
+
+
+full_name_clean = full_name.strip()
+name_title = full_name_clean.title()
+
+course_upper = course_code.upper()
+
+last_name = name_parts[-1].upper()
+
+birth_year = birth_date[-4:]
+
+
+year_dict = {
+    "1": "1st Year",
+    "2": "2nd Year",
+    "3": "3rd Year",
+    "4": "4th Year"
+}
+year_text = year_dict[year_level]
+
+
+student_id = f"{course_upper}-{year_level}-{last_name}-{birth_year}"
+
+print("\nID Generated Successfully!")
+
+
+print("\n" + "=" * 40)
+print(" " * 10 + "STUDENT ID CARD")
+print("=" * 40)
+
+print(f"Name     : {name_title}")
+print(f"Course   : {course_upper}")
+print(f"Year     : {year_text}")
+print(f"Student ID: {student_id}")
+
+print("=" * 40)
