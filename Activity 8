@@ -1,0 +1,29 @@
+
+
+
+sentence = input("Enter a sentence: ")
+
+
+print("\n--- TEXT FORMATS ---")
+print("Uppercase:", sentence.upper())
+print("Lowercase:", sentence.lower())
+print("Title Case:", sentence.title())
+
+
+count_a = sentence.lower().count("a")
+print("\nNumber of letter 'a':", count_a)
+
+
+trimmed = sentence.strip()
+print("\nWithout extra spaces:", trimmed)
+
+
+underscored = trimmed.replace(" ", "_")
+print("With underscores:", underscored)
+
+
+words = trimmed.split()
+
+print("\n--- WORDS ---")
+for word in words:
+    print(word)
