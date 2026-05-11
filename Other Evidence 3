@@ -1,0 +1,69 @@
+
+gradebook = [
+    ["Ana", 85, 90, 88, 92],
+    ["John", 78, 80, 84, 76],
+    ["Maria", 95, 93, 97, 96],
+    ["Luis", 70, 75, 72, 74],
+    ["Peter", 88, 86, 90, 91]
+]
+
+print("=== GRADEBOOK ===")
+
+
+for student in gradebook:
+    for item in student:
+        print(item, end="\t")
+    print()
+
+print("\n=== AVERAGES ===")
+
+
+highest_avg = 0
+top_student = ""
+
+for student in gradebook:
+    name = student[0]
+    total = 0
+
+    for i in range(1, len(student)):
+        total += student[i]
+
+    average = total / 4
+    print(name, "Average:", average)
+
+    if average > highest_avg:
+        highest_avg = average
+        top_student = name
+
+print("\nTop Student:", top_student, "with average", highest_avg)
+
+
+highest_score = gradebook[0][1]
+lowest_score = gradebook[0][1]
+
+for student in gradebook:
+    for i in range(1, len(student)):
+        if student[i] > highest_score:
+            highest_score = student[i]
+        if student[i] < lowest_score:
+            lowest_score = student[i]
+
+print("\nHighest Score:", highest_score)
+print("Lowest Score:", lowest_score)
+
+
+gradebook.append(["Riygan", 91, 89, 93, 90])
+
+print("\nAfter adding new student:")
+for student in gradebook:
+    print(student)
+
+
+ 
+for student in gradebook:
+    if student[0] == "Maria":
+        student[2] = 99
+
+print("\nAfter updating Maria's score:")
+for student in gradebook:
+    print(student)
