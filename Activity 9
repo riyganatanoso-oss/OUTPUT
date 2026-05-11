@@ -1,0 +1,21 @@
+
+
+
+item_name = input("Enter item name: ")
+quantity = int(input("Enter quantity: "))
+unit_price = float(input("Enter unit price: "))
+
+
+total = quantity * unit_price
+
+
+print("\n--- RECEIPT ---")
+
+
+print(f"{item_name:<15}{quantity:>5}")
+
+
+print(f"Unit Price: P{unit_price:,.2f}")
+
+
+print(f"Total:      P{total:,.2f}")
