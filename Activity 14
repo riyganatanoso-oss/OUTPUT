@@ -1,0 +1,36 @@
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("Matrix:")
+
+for row in matrix:
+    for num in row:
+        print(num, end=" ")
+    print()
+
+print("\nRow sums:")
+
+for row in matrix:
+    print(sum(row))
+
+print("\nColumn sums:")
+
+for col in range(3):
+    col_sum = 0
+    for row in matrix:
+        col_sum += row[col]
+    print(col_sum)
+
+print("\nDiagonal elements:")
+
+for i in range(3):
+    print(matrix[i][i])
+
+print("\n5-row star triangle:")
+
+for i in range(1, 6):
+    print("*" * i)
