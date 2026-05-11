@@ -1,0 +1,25 @@
+gradebook = [
+    ["Maria", 85, 90, 88],
+    ["Juan", 78, 82, 80],
+    ["Liza", 92, 89, 94],
+    ["Mark", 75, 80, 79]
+]
+
+
+print("=== GRADEBOOK ===")
+for student in gradebook:
+    print(student)
+
+
+print("\n2nd student's Quiz 2 score:", gradebook[1][2])
+
+
+gradebook[2][1] = 100
+
+
+gradebook.append(["Anna", 88, 91, 87])
+
+
+print("\n=== UPDATED GRADEBOOK ===")
+for student in gradebook:
+    print(student)
